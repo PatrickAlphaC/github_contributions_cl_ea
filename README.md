@@ -21,7 +21,7 @@ Enter into the newly-created directory
 cd ipfs_cl_ea
 ```
 
-See [Install Locally](#install-locally) for a quickstart
+Then you'll need to start your [IPFS node](https://ipfs.io/) with `ipfs daemon`. 
 
 ## Input Params
 

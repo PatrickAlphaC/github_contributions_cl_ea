@@ -48,7 +48,7 @@ const createRequest = (input, callback) => {
   const text_for_file_name = validator.validated.data.text_for_file_name
   const ipfs_host = validator.validated.data.ipfs_host || 'http://127.0.0.1:5001/'
   const endpoint = validator.validated.data.endpoint || 'api/v0/add'
-  const starting_char = validator.validated.data.starting_char || 0
+  const starting_char = validator.validated.data.starting_char || 0 // The important one
 
   const url = `${ipfs_host}${endpoint}`
 
@@ -81,7 +81,7 @@ const createRequest = (input, callback) => {
 
   const form = new FormData()
   let form_config = {}
-  console.log("THIS  THIS THE FILE" + file)
+  console.log("THIS THE FILE" + file)
   if (file != null) {
     form.append('file', fs.createReadStream(file))
     form_config = {
@@ -117,6 +117,7 @@ const createRequest = (input, callback) => {
       // one another.
       console.log(response.data)
       response.data.result = response.data.Hash
+      console.log("https://ipfs.io/ipfs/" + response.data.Hash)
       console.log(starting_char)
       if (starting_char > 0) {
         console.log("test")
